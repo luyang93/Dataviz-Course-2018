@@ -1,10 +1,9 @@
 body {
-    margin: 0px;
+    margin: 0;
     overflow: auto;
 }
 
 text {
-    font-size: 3em;
     font-family: sans-serif;
     text-anchor: middle;
 }
