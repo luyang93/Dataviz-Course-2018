@@ -6,46 +6,47 @@ const radiusScale = d3.scaleOrdinal().
     domain(['apple', 'lemon']).
     range([50, 30]);
 
-const xPosition = (d, i) => i * 180 + 100;
+const xPosition = i => i * 180 + 100;
 
 export const fruitBowl = (selection, props) => {
   const {fruits, height} = props;
 
-  const circlesG = selection.selectAll('circle').
-      data(fruits, d => d.id);
+  const groupTransform = (d, i) => `translate(${xPosition(i)},${height / 2})`;
 
-  circlesG.enter().
-      append('circle').
-      attr('cx', xPosition).
-      attr('cy', height / 2).
+  const groups = selection.selectAll('g').
+      data(fruits, d => d.id);
+  const groupsEnter = groups.enter().
+      append('g').
+      attr('transform', groupTransform);
+
+  groupsEnter.merge(groups).
+      transition().duration(1000).
+      attr('transform', groupTransform);
+  groups.exit().
+      transition().duration(1000).
+      remove();
+
+  groupsEnter.append('circle').
       attr('r', 0).
-      merge(circlesG).
+      merge(groups.select('circle')).
       transition().duration(1000).
       attr('fill', d => colorScale(d.type)).
-      attr('cx', xPosition).
       attr('r', d => radiusScale(d.type));
-
-  circlesG.exit().
+  groups.exit().
+      select('circle').
       transition().duration(1000).
-      attr('r', 0).
-      remove();
+      attr('r', 0);
 
-  const text = selection.selectAll('text').
-      data(fruits, d => d.id);
-
-  text.enter().
-      append('text').
-      attr('x', xPosition).
+  groupsEnter.append('text').
       style('font-size', '0em').
-      merge(text).
+      merge(groups.select('text')).
       transition().duration(1000).
-      attr('y', height / 2 + 120).
-      attr('x', xPosition).
+      attr('y', 120).
       style('font-size', '3em').
       text(d => d.type);
-
-  text.exit().
+  groups.exit().
+      select('text').
       transition().duration(1000).
-      style('font-size', '0em').
-      remove();
+      style('font-size', '0em');
+
 };
