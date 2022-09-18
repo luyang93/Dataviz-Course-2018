@@ -4,14 +4,21 @@ const colorScale = d3.scaleOrdinal().
 
 const radiusScale = d3.scaleOrdinal().
     domain(['apple', 'lemon']).
-    range([50, 30]);
-
-const xPosition = i => i * 180 + 100;
+    range([80, 50]);
 
 export const fruitBowl = (selection, props) => {
   const {fruits, height} = props;
 
-  const groupTransform = (d, i) => `translate(${xPosition(i)},${height / 2})`;
+  const bowl = selection.selectAll('rect').
+      data([null]).
+      enter().
+      append('rect').
+      attr('width', 920).
+      attr('height', height / 2).
+      attr('rx', height / 4).
+      attr('transform', `translate(0, ${height / 4})`);
+
+  const groupTransform = (d, i) => `translate(${i * 180 + 100}, ${height / 2})`;
 
   const groups = selection.selectAll('g').
       data(fruits, d => d.id);
@@ -42,7 +49,7 @@ export const fruitBowl = (selection, props) => {
       merge(groups.select('text')).
       transition().duration(1000).
       attr('y', 120).
-      style('font-size', '3em').
+      style('font-size', '2em').
       text(d => d.type);
   groups.exit().
       select('text').
