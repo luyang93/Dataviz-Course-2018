@@ -6,3 +6,4 @@
 - [Customizing Axes](Customizing Axes/index.html)
 - [Making a Scatter Plot](Making a Scatter Plot/index.html)
 - [Making Line & Area Charts](Making Line & Area Charts/index.html)
+- [The General Update Pattern](The General Update Pattern/index.html)
