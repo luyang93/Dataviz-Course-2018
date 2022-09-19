@@ -1,4 +1,4 @@
-# Dataviz Course 2018
+# [Dataviz Course 2018](https://luyang93.gitlab.io/dataviz-course-2018)
 
 - [Introduction to HTML, CSS and SVG](Introduction to HTML, CSS and SVG/index.html)
 - [Intro to D3.js - Making a Face](Intro to D3.js - Making a Face/index.html)
