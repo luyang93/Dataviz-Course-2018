@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.area-label {
+    font-family: sans-serif;
+    fill-opacity: 0.7;
+}
+
+path:hover {
+    fill-opacity: 1;
+    fill: black;
+}
+
+path {
+    fill-opacity: 0.8;
+    stroke-width: 0.5;
+}
+
+text {
+    pointer-events: none;
+}
+
+.axis--major .tick text,
+.legend text,
+.tooltip text {
+    fill: #585858;
+    font-family: sans-serif;
+    font-size: 16pt;
+}
+
+.axis--minor .tick text {
+    display: none;
+}
+
+.axis--major .tick line {
+    stroke: #ddd;
+    stroke-width: 2px;
+}
+
+.axis--minor .tick line {
+    stroke: #eee;
+}
+
+.axis .domain {
+    display: none;
+}

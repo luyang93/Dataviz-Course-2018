@@ -8,3 +8,4 @@
 - [Making Line & Area Charts](Making Line & Area Charts/index.html)
 - [The General Update Pattern](The General Update Pattern/index.html)
 - [Marks & Channels](Marks & Channels/index.html)
+- [Stream Graph](Stream Graph/index.html)
