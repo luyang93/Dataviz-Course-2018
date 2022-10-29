@@ -9,3 +9,4 @@
 - [The General Update Pattern](The General Update Pattern/index.html)
 - [Marks & Channels](Marks & Channels/index.html)
 - [Stream Graph](Stream Graph/index.html)
+- [Interaction with Unidirectional Data Flow](Interaction with Unidirectional Data Flow/index.html)
