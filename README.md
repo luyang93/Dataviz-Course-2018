@@ -12,3 +12,4 @@
 - [Interaction with Unidirectional Data Flow](Interaction with Unidirectional Data Flow/index.html)
 - [Making a World Map](Making a World Map/index.html)
 - [Cheap Tricks for Interaction](Cheap Tricks for Interaction/index.html)
+- [Blank Canvas](Blank Canvas/index.html)
