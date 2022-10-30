@@ -1,0 +1,20 @@
+body {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+path {
+    fill: none;
+    stroke: #56c2a3;
+}
+
+text {
+    text-shadow: -1px -1px 3px white, -1px 1px 3px white, 1px -1px 3px white, 1px 1px 3px white;
+    pointer-events: none;
+    font-family: 'Playfair Display', serif;
+}

@@ -1,4 +1,4 @@
-# [Dataviz Course 2018](https://luyang93.gitlab.io/Dataviz-Course-2018)
+# Dataviz Course 2018
 
 - [Introduction to HTML, CSS and SVG](Introduction to HTML, CSS and SVG/index.html)
 - [Intro to D3.js - Making a Face](Intro to D3.js - Making a Face/index.html)
@@ -13,3 +13,4 @@
 - [Making a World Map](Making a World Map/index.html)
 - [Cheap Tricks for Interaction](Cheap Tricks for Interaction/index.html)
 - [Blank Canvas](Blank Canvas/index.html)
+- [Tree Visualization of World Countries](Tree Visualization of World Countries/index.html)
