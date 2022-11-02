@@ -14,3 +14,4 @@
 - [Cheap Tricks for Interaction](Cheap Tricks for Interaction/index.html)
 - [Blank Canvas](Blank Canvas/index.html)
 - [Tree Visualization of World Countries](Tree Visualization of World Countries/index.html)
+- [Heatmap](Heatmap/index.html)
