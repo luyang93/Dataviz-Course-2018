@@ -15,3 +15,4 @@
 - [Blank Canvas](Blank Canvas/index.html)
 - [Tree Visualization of World Countries](Tree Visualization of World Countries/index.html)
 - [Heatmap](Heatmap/index.html)
+- [Sunburst](Sunburst/index.html)
