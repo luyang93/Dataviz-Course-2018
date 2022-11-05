@@ -42,9 +42,9 @@ export const fruitBowl = (selection, props) => {
           ? 'black'
           : 'none').
       attr('stroke-width', d => d.id === selectedFruit ? 20 : 5).
-      on('click', d => onClick(d.id)).
-      on('mouseover', d => onMouseOver(d.id)).
-      on('mouseout', () => onMouseOver(null)).
+      on('click', function(event, d) {onClick(d.id);}).
+      on('mouseover', function(event, d) {onMouseOver(d.id);}).
+      on('mouseout', function(event, d) {onMouseOver(null);}).
       transition().duration(2000).
       attr('fill', d => colorScale(d.type)).
       attr('r', d => radiusScale(d.type));

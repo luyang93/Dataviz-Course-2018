@@ -17,3 +17,4 @@
 - [Heatmap](Heatmap/index.html)
 - [Sunburst](Sunburst/index.html)
 - [Color and Size Legends](Color and Size Legends/index.html)
+- [Choropleth Map](Choropleth Map/index.html)

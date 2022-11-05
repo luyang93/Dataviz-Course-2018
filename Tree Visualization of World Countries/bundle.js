@@ -18,8 +18,8 @@
   const g = zoomG.append('g').
       attr('transform', `translate(${margin.left},${margin.top})`);
 
-  svg.call(d3.zoom().on('zoom', () => {
-    zoomG.attr('transform', d3.event.transform);
+  svg.call(d3.zoom().on('zoom', function(event, d) {
+    zoomG.attr('transform', event.transform);
   }));
 
   d3.json('data.json').then(data => {

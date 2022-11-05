@@ -2,15 +2,16 @@
   'use strict';
 
   function computeYears(rawData) {
-    const allYearsSet = d3.set();
+    const allYearsSet = new Set();
     rawData.forEach(function(d) {
       d.values.forEach(function(d) {
         allYearsSet.add(d.key);
       });
     });
-    const yearsExtent = d3.extent(allYearsSet.values().map(function(yearStr) {
-      return +yearStr;
-    }));
+    const yearsExtent = d3.extent(
+        Array.from(allYearsSet).map(function(yearStr) {
+          return +yearStr;
+        }));
     return d3.range(yearsExtent[0], yearsExtent[1] + 1).map(function(year) {
       return new Date(year + '');
     });
