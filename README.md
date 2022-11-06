@@ -18,3 +18,4 @@
 - [Sunburst](Sunburst/index.html)
 - [Color and Size Legends](Color and Size Legends/index.html)
 - [Choropleth Map](Choropleth Map/index.html)
+- [Choropleth Map with Interactive Filtering](Choropleth Map with Interactive Filtering/index.html)
