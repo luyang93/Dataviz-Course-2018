@@ -12,8 +12,8 @@
       attr('class', 'sphere').
       attr('d', pathGenerator({type: 'Sphere'}));
 
-  svg.call(d3.zoom().on('zoom', () => {
-    g.attr('transform', d3.event.transform);
+  svg.call(d3.zoom().on('zoom', function(event, d) {
+    g.attr('transform', event.transform);
   }));
 
   Promise.all([
