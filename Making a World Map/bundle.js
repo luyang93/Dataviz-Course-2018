@@ -10,7 +10,7 @@
       attr('class', 'sphere').
       attr('d', pathGenerator({type: 'Sphere'}));
 
-  d3.json('https://unpkg.com/world-atlas@1.1.4/world/110m.json').then(data => {
+  d3.json('https://cdn.jsdelivr.net/npm/world-atlas@1.1.4/world/110m.json').then(data => {
     const countries = topojson.feature(data, data.objects.countries);
 
     svg.selectAll('path').

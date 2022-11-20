@@ -1,6 +1,6 @@
 export const loadAndProcessData = () => Promise.all([
-  d3.csv('./data.csv'),
-  d3.json('https://unpkg.com/visionscarto-world-atlas@0.0.4/world/50m.json')]).
+  d3.csv('data.csv'),
+  d3.json('https://cdn.jsdelivr.net/npm/visionscarto-world-atlas@0.0.4/world/50m.json')]).
     then(([unData, topoJSONdata]) => {
       const rowById = unData.reduce((accumulator, d) => {
         accumulator[d['Country code']] = d;
