@@ -29,11 +29,7 @@ export const scatterPlot = (selection, props) => {
   gEnter.merge(g).
       attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-  const xAixTickFormat = number => d3.format('.3s')(number).
-      replace('G', 'B');
-
   const xAxis = d3.axisBottom(xScale).
-      tickFormat(xAixTickFormat).
       tickSize(-innerHeight).
       tickPadding(15);
 

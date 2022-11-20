@@ -20,3 +20,4 @@
 - [Choropleth Map](Choropleth Map/index.html)
 - [Choropleth Map with Interactive Filtering](Choropleth Map with Interactive Filtering/index.html)
 - [Scatter Plot with Menus](Scatter Plot with Menus/index.html)
+- [Circles on a Map](Circles on a Map/index.html)
