@@ -93,7 +93,7 @@ import {loadAndProcessData} from './loadAndProcessData.js';
         attr('d', d => lineGenerator(d[1])).
         attr('stroke', d => colorScale(d[0]));
 
-    svg.append('text').
+    g.append('text').
         attr('class', 'title').
         attr('x', width / 2).
         attr('y', 45).
