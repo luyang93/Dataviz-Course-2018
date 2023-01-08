@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" user-scalable="no">
+    <title>D3 Example: Enter, Update, Exit – Christian Behrens</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"></script>
+</head>
+<body>
+<h1>Enter, Update, Exit</h1>
+<p id="info">Press the button to add an element to the end of the array. Click a bar to remove the connected element
+    from the data set.</p>
+<div id="chart"></div>
+<div id="dataset"></div>
+<button id="add-btn">Add Element</button>
+<script charset="utf-8" src="main.js"></script>
+<div>
+    <br>
+    <svg height="50" id="randomtext" viewBox="0 -20 500 50" width="500"></svg>
+    <br>
+    <button onclick="updateText()">With join</button>
+</div>
+<div>
+    <br>
+    <svg height="50" id="randomtext2" viewBox="0 -20 500 50" width="500"></svg>
+    <br>
+    <button onclick="updateText2()">Without join</button>
+</div>
+<script>
+  function randomLetters () {
+    return d3.
+      shuffle('abcdefghijklmnopqrstuvwxyz'.split('')).
+      slice(0, Math.floor(6 + Math.random() * 20))
+  }
+
+  const svg = d3.select('#randomtext')
+
+  function updateText () {
+    const t = svg.transition().duration(750)
+
+    svg.selectAll('text').
+      data(randomLetters(), d => d).
+      join(
+        enter => enter.
+          append('text').
+          attr('x', (d, i) => i * 16).
+          attr('y', -20).
+          attr('fill', 'green').
+          text(d => d).
+          call(
+            enter => enter.
+              transition(t).
+              attr('y', 0),
+          ),
+        update => update.
+          attr('y', 0).
+          attr('fill', 'black').
+          call(
+            update => update.
+              transition(t).
+              attr('x', (d, i) => i * 16),
+          ),
+        exit => exit.
+          attr('fill', 'brown').
+          call(
+            exit => exit.
+              transition(t).
+              attr('y', 20).
+              remove(),
+          ),
+      )
+  }
+</script>
+<script>
+  const svg2 = d3.select('#randomtext2')
+
+  function updateText2 () {
+    const t = svg2.transition().duration(750)
+
+    const textUpdate = svg2.
+      selectAll('text').
+      data(randomLetters(), d => d).
+      attr('y', 0).
+      attr('fill', 'black').
+      call(
+        update => update.
+          transition(t).
+          attr('x', (d, i) => i * 16),
+      )
+
+    const textsEnter = textUpdate.
+      enter().
+      append('text').
+      attr('x', (d, i) => i * 16).
+      attr('y', -20).
+      attr('fill', 'green').
+      text(d => d).
+      call(
+        enter => enter.
+          transition(t).
+          attr('y', 0),
+      )
+
+    const textExit = textUpdate.
+      exit().
+      attr('fill', 'brown').
+      call(
+        exit => exit.
+          transition(t).
+          attr('y', 20).
+          remove(),
+      )
+  }
+</script>
+</body>
+</html>
