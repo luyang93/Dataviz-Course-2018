@@ -12,6 +12,7 @@ pages:
     paths:
       # The folder that contains the files to be exposed at the Page URL
       - public
+    expire_in: 90 days
   rules:
     # This ensures that only pushes to the default branch will trigger
     # a pages deploy

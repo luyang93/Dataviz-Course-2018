@@ -1,6 +1,6 @@
 /* global d3 */
 
-function loadData(actions) {
+function loadData (actions) {
   const numericColumns = [
     'acceleration',
     'cylinders',
@@ -8,21 +8,21 @@ function loadData(actions) {
     'horsepower',
     'weight',
     'year',
-    'mpg'];
+    'mpg']
 
-  const ordinalColumns = ['cylinders', 'origin', 'year'];
+  const ordinalColumns = ['cylinders', 'origin', 'year']
 
   setTimeout(() => {
     // Show off the spinner for a few seconds ;)
     d3.csv('auto-mpg.csv', type, data => {
-      actions.ingestData(data, numericColumns, ordinalColumns);
-    });
-  }, 2000);
+      actions.ingestData(data, numericColumns, ordinalColumns)
+    })
+  }, 2000)
 
-  function type(d) {
+  function type (d) {
     return numericColumns.reduce((d, column) => {
-      d[column] = +d[column];
-      return d;
-    }, d);
+      d[column] = +d[column]
+      return d
+    }, d)
   }
 }

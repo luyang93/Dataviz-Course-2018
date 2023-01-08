@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Cars Report</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
 <h1>Cars Report</h1>
@@ -12,18 +12,18 @@
     <li>2009 Ford F150: $1950</li>
     <li>2009 Chevrolet Trailblazer: $1550</li>
 </ul>
-<svg width="960" height="500">
+<svg height="500" width="960">
     <g transform="scale(1.5)">
         <circle cx="50" cy="50" r="40"></circle>
-        <rect x="150" y="25" width="50" height="50"></rect>
-        <circle cx="50" cy="150" r="40" fill="red"></circle>
-        <rect x="150" y="125" width="50" height="50" fill="#83cc2a"></rect>
-        <g transform="translate(0, 200)" fill="#adf6ff" stroke="black">
+        <rect height="50" width="50" x="150" y="25"></rect>
+        <circle cx="50" cy="150" fill="red" r="40"></circle>
+        <rect fill="#83cc2a" height="50" width="50" x="150" y="125"></rect>
+        <g fill="#adf6ff" stroke="black" transform="translate(0, 200)">
             <circle cx="50" cy="50" r="40" stroke-width="5"></circle>
-            <rect x="150" y="25" width="50" height="50"></rect>
+            <rect height="50" width="50" x="150" y="25"></rect>
         </g>
         <g class="lines" transform="translate(50,0)">
-            <line x1="200" y1="20" x2="300" y2="280"></line>
+            <line x1="200" x2="300" y1="20" y2="280"></line>
             <path d="M300 280 L350 200 L400 250 L450 230" fill="none"></path>
         </g>
     </g>
